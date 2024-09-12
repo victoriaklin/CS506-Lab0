@@ -14,26 +14,26 @@ def test_dot_product():
     
 def test_cosine_similarity():
     ### YOUR CODE HERE
-    vector1 = np.array([1, 0])
-    vector2 = np.array([0, 1])
+    vector1 = np.array([1, 0, 0])
+    vector2 = np.array([1, 0, 0])
     
     result = cosine_similarity(vector1, vector2)
     
-    expected_result = 0.0
+    expected_result = 1.0
     
     assert np.isclose(result, expected_result), f"Expected {expected_result}, but got {result}"
 
 def test_nearest_neighbor():
     ### YOUR CODE HERE
-    target_vector = np.array([1, 2, 3])
+    target_vector = np.array([1, 0, 0])
     vectors = np.array([
         [1, 0, 0],
         [0, 1, 0],
-        [1, 2, 3]
+        [0, 0, 1]
     ])
     
     result = nearest_neighbor(target_vector, vectors)
     
-    expected_index = 2
+    expected_index = 0
     
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"

@@ -42,11 +42,18 @@ def nearest_neighbor(target_vector, vectors):
     # Hint: For this lab, you can just use a for loop to iterate through vectors.
     '''
     ### YOUR CODE HERE
-    best_similarity = -1
-    best_index = -1
+    # Initialize variables to track the maximum similarity and corresponding index
+    max_similarity = -1  # Cosine similarity ranges from -1 to 1, so we start with the lowest possible value
+    nearest_index = -1
+    
+    # Iterate through each vector in the matrix
     for i, vector in enumerate(vectors):
+        # Compute cosine similarity between target_vector and the current vector
         similarity = cosine_similarity(target_vector, vector)
-        if similarity > best_similarity:
-            best_similarity = similarity
-            best_index = i
-    return best_index
+        
+        # Update the nearest index if a higher similarity is found
+        if similarity > max_similarity:
+            max_similarity = similarity
+            nearest_index = i
+    
+    return nearest_index
