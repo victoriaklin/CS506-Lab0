@@ -1,5 +1,4 @@
 ## Please fill in all the parts labeled as ### YOUR CODE HERE
-
 import numpy as np
 import pytest
 from utils import *
@@ -37,4 +36,3 @@ def test_nearest_neighbor():
     expected_index = 0
     
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"
-
